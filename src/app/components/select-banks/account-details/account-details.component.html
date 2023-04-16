@@ -1,0 +1,19 @@
+<div style="margin:20px">
+    <h3 class="tcenter tbold">Select One Or more banks</h3>
+</div>
+<div class="example-card" *ngFor="let item of accounts">
+
+    <mat-card class="example-card" cdkDrag cdkDragLockAxis="x" (cdkDragReleased)="(item.checked=true)">
+        <mat-card-header cdkDragHandle>
+            <mat-card-title-group>
+                <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Small</mat-card-subtitle>
+
+            </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>
+        </mat-card-content>
+    </mat-card>
+    <mat-icon class="mat-list-item-delete" matSuffix (click)="deleteItem(item)">delete</mat-icon>
+</div>

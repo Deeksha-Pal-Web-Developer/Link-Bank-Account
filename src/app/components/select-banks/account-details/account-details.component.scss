@@ -1,0 +1,41 @@
+.example-card {
+    max-width: 700px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 10;
+  }
+ 
+
+  .mat-list-item-delete {
+
+    position: absolute;
+    right: 0;
+    top: 39%;
+    /* bottom: 0; */
+    width: 26px;
+    color: #f44336;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+  }
+
+  // .example-card {
+  //   max-width: 700px;
+  //   margin-bottom: 8px;
+  // }
+ 
+
+  //   .mat-list-item-delete {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   bottom: 0;
+  //   width: 50px;
+  //   background-color: #f44336;
+  //   color: white;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
+  

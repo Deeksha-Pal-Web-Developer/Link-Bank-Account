@@ -1,0 +1,55 @@
+<div style="width:100%;max-width: 360px !important; margin:0 auto">
+    <div class="topSection">
+        <div class="m-20">
+            <p class="tcenter tbold ft14 tgray">Select one or more banks</p>
+            <mat-form-field class="example-form-field" class="wd100" appearance="outline">
+                <mat-label> Search Bank Name</mat-label>
+                <input matInput type="text" [(ngModel)]="searchValue" (keyup)="searchBank()">
+                <mat-icon matPrefix>search</mat-icon>
+                <mat-icon matSuffix *ngIf="searchValue" (click)="clear()">close</mat-icon>
+            </mat-form-field>
+
+            <div class="tcenter selectedBankSection">
+                <div class="selectedBank" *ngIf="selectedBanks.length;else empty">
+                    <span class="selectedBankList" *ngFor="let item of selectedBanks;let i = index">
+                        <img [src]="getWidgetAssets(item)" width="30px" />
+                        <div class="clearDiv">
+                            <mat-icon class="clear" matSuffix (click)="remove(item)">close</mat-icon>
+                        </div>
+                    </span>
+                </div>
+                <ng-template #empty>
+                    <p>No Bank is selected</p>
+                </ng-template>
+            </div>
+        </div>
+    </div>
+
+    <div class="midSection">
+        <section *ngIf="!errorMsg">
+            <section *ngFor="let option of banks;let i=index">
+                <mat-card *ngIf="option.selected">
+                    <mat-card-content>
+                        <img class="fL bankImg" [src]="getWidgetAssets(option.bankCode)" width="36px" />
+                        <p class="fL bankName">{{option?.bankName}}</p>
+                        <mat-checkbox class="bankCheckbox" [checked]="option.checked"
+                            (click)="updateSelectedBanks($event,option.bankCode)">
+                        </mat-checkbox>
+                    </mat-card-content>
+                </mat-card>
+            </section>
+        </section>
+
+        <section *ngIf="errorMsg" class="tcenter errorMsg tgray">
+            <p>Sorry, No banks is found.</p>
+            <p>Please search again the correct bank Name.</p>
+        </section>
+    </div>
+
+    <div class="bottomSection">
+        <div class="btnDiv">
+            <button mat-raised-button color="primary">Proceed</button>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
