@@ -1,4 +1,4 @@
-<div style="width:100%;max-width: 360px !important; margin:0 auto">
+<div class="container">
     <div class="topSection">
         <div class="m-20">
             <p class="tcenter tbold ft14 tgray">Select one or more banks</p>
@@ -48,7 +48,7 @@
 
     <div class="bottomSection">
         <div class="btnDiv">
-            <button mat-raised-button color="primary">Proceed</button>
+            <button mat-raised-button color="primary" [disabled]="!selectedBanks.length">Proceed</button>
         </div>
     </div>
 </div>

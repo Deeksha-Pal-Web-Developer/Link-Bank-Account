@@ -133,3 +133,36 @@
         text-align: center;
     }
 }
+
+.container{
+    width:100%;max-width: 640px !important; margin:0 auto
+}
+
+@media only screen and (min-width: 720px) {
+
+    .container{
+        width:100%;max-width: 720px !important; margin:0px auto; padding-top:60px;
+    }
+    .topSection{
+        width: 50%;
+        float: right;
+        position: unset;
+        margin-top:8px;
+        border-radius: 8px;
+    }
+    .midSection{
+        width: 50%;
+        padding: 0;
+        height: 40vh;
+    }
+    .bottomSection{
+        width: 50%;
+        float: right;
+        position: relative;
+    }
+    .errorMsg{
+        margin:10px;
+        color:red
+    }
+   
+}
