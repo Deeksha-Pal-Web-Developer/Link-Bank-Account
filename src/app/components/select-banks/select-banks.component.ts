@@ -11,10 +11,7 @@ export class SelectBanksComponent implements OnInit {
   searchValue: any;
   errorMsg: boolean = false;
   selectedBanks: any = [];
-
-  constructor(
-    //
-  ) { }
+  banklogos: string[] = ['andhra', 'apb', 'apna', 'bob', 'hdfc'];
 
   ngOnInit() {
     this.banks = this.getJsonBanks().map((jsonObj: any) => {
@@ -49,10 +46,11 @@ export class SelectBanksComponent implements OnInit {
   }
 
   getWidgetAssets(selectedBank: any) {
-    if (selectedBank == 'default_bank')
-      return `/assets/images/banks/${selectedBank}.png`;
-    else
+    let isLogo = this.banklogos.includes(selectedBank);
+    if (isLogo)
       return `/assets/images/banks/${selectedBank}.svg`;
+    else
+      return `/assets/images/banks/default_bank.png`;
   }
 
   updateSelectedBanks(event: Event, val: any) {
