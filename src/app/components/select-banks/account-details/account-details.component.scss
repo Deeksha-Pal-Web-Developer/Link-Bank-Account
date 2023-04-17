@@ -29,7 +29,8 @@
 .selectedBank {
     display: flex;
     padding-top: 6px;
-    overflow: hidden;
+    overflow-x: auto;
+    overflow-y: hidden;
 
     .selectedBankList {
         position: sticky;
