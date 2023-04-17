@@ -1,6 +1,12 @@
 # LinkBankAccount
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+In my system , I have created the project with following specifications
+node v14.21.2
+I have used Angular 15 with all compatible dependencies.
+Currently there is 0 vulnerabilities.
+![image](https://user-images.githubusercontent.com/130840305/232407124-cdb4e32e-2df9-4fc5-874d-c97c124a0db6.png)
+
 
 ## Development server
 
