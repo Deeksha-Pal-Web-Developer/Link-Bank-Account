@@ -2,34 +2,25 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.m-20 {
-    margin: 20px
-}
 
-.tgray {
-    color: darkslategray
-}
+.wd100 { width: 100% }
+.wdHalf{ width: 50%; }
 
-.wd100 {
-    width: 100%
-}
+.fL { float: left; }
+.fR { float: right; }
 
-.fL {
-    float: left;
-}
+.ft14 { font-size: 14px; }
 
-.fR {
-    float: right;
-}
+.m-0{ margin: 0; }
+.m-20 { margin: 20px }
+.h48{height: 48px !important;}
+.pl-20{ padding-left: 20px; }
 
-.tcenter {
-    text-align: center;
-}
+.tcenter { text-align: center; }
+.tbold { font-weight: 500; }
+.tgray { color: darkslategray }
+.tgreen{ color:green; }
+.tblue{ color:blue }
 
-.tbold {
-    font-weight: 500;
-}
 
-.ft14 {
-    font-size: 14px;
-}
+.mat-bottom-sheet-container{border-radius: 24px 24px 0 0;}

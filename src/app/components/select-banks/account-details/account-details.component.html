@@ -1,19 +1,46 @@
-<div style="margin:20px">
-    <h3 class="tcenter tbold">Select One Or more banks</h3>
-</div>
-<div class="example-card" *ngFor="let item of accounts">
+<div class="container">
+    <div class="topSection">
+        <div class="m-20">
+            <p class="tcenter tbold ft14 tgray">Link Bank Accounts</p>
+        </div>
+    </div>
 
-    <mat-card class="example-card" cdkDrag cdkDragLockAxis="x" (cdkDragReleased)="(item.checked=true)">
-        <mat-card-header cdkDragHandle>
-            <mat-card-title-group>
-                <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-                <mat-card-title>Shiba Inu</mat-card-title>
-                <mat-card-subtitle>Small</mat-card-subtitle>
+    <div class="midSection">
+        <section *ngIf="!errorMsg">
+            <section *ngFor="let account of finalAccounts;let i=index">
+                <div class="selectedBank">
+                    <mat-card  class="selectedBankList matCard">
+                        <mat-card-content>
+                            <img class="fL bankImg" [src]="getWidgetAssets(account.bankCode)" width="36px" />
+                            <div class="fL bankName">
+                                <p class="m-0">{{account.accountNo}}</p>
+                                <p class="m-0">
+                                    <span>{{account.accountType}} </span> 
+                                    <span *ngIf="account.status=='Linked'" class="pl-20 tgreen" >{{account.status}}</span>
+                                    <span *ngIf="account.status!='Linked'" class="pl-20 tblue" (click)="openBottomSheet(account.accountNo,account.bankCode)"> Get Otp</span>
+                                </p>
+                            </div>
 
-            </mat-card-title-group>
-        </mat-card-header>
-        <mat-card-content>
-        </mat-card-content>
-    </mat-card>
-    <mat-icon class="mat-list-item-delete" matSuffix (click)="deleteItem(item)">delete</mat-icon>
+                        </mat-card-content>
+                    </mat-card>
+                    <span class="selectedBankList deleteBody">
+                        <mat-icon class="mat-list-item-delete" matSuffix (click)="deleteItem(account)">delete</mat-icon>
+                    </span>
+                </div>
+            </section>
+        </section>
+
+        <section class="m-20" *ngIf="!finalAccounts.length" class="tcenter errorMsg tgray">
+            <p>Sorry, No banks Account is found.</p>
+            <p class="m-20">Presse 'Add Bank Account' and select again the your bank Name.</p>
+        </section>
+    </div>
+
+    <div class="bottomSection">
+        <div class="btnDiv">
+            <button class="wdHalf"  mat-raised-button color="primary" (click)="goToBankPage()" >Add Bank Account</button>
+            <button class="wdHalf" mat-raised-button color="primary" [disabled]="!finalAccounts.length" >Proceed</button>
+        </div>
+    </div>
 </div>
+<app-footer></app-footer>

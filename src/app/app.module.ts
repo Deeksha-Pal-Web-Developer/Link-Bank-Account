@@ -10,7 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { SelectBanksComponent } from './components/select-banks/select-banks.component';
 import { AccountDetailsComponent } from './components/select-banks/account-details/account-details.component';
 import { MaterialModule } from './material/material.module';
-import { DragDropModule } from '@angular/cdk/drag-drop';
+import { OtpComponentComponent } from './components/select-banks/account-details/otp-component/otp-component.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FooterComponent,
     SelectBanksComponent,
     AccountDetailsComponent,
+    OtpComponentComponent,
 
   ],
   imports: [
@@ -27,7 +28,6 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

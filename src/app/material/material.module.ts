@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import {MatDialogModule} from '@angular/material/dialog';
-// import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -10,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 
 @NgModule({
@@ -22,8 +22,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    // MatSnackBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatBottomSheetModule
   ],
   exports: [
     MatCardModule,
@@ -32,8 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    // MatSnackBarModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatBottomSheetModule
   ]
 })
 export class MaterialModule { }

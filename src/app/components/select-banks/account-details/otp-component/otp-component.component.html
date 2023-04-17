@@ -1,0 +1,29 @@
+<section class="m-20">
+    <div *ngIf="!isOtpSuccess; else successScreen">
+        <h2 class="tcenter">OTP sent to {{data.mobileNo}}</h2>
+        <form [formGroup]="otpForm" (ngSubmit)="verify()">
+            <mat-form-field class="example-form-field" class="wd100" appearance="outline">
+                <mat-label> Enter OTP</mat-label>
+                <input matInput type="number" formControlName="otp">
+                <mat-error>Not a valid input</mat-error>
+            </mat-form-field>
+
+
+            <div class="m-20">
+                <p>
+                    Didn't received OTP? <span (click)="resend()" class="tblue"> Resend </span> in 00:{{sec}}
+                </p>
+
+            </div>
+            <button class="wd100 h48" mat-raised-button color="primary" [disabled]="!otpForm.valid" (click)="verify()">Verify</button>
+        </form>
+    </div>
+    <ng-template #successScreen>
+        <div class="m-20 tcenter" style="height:234px">
+            Otp Verification is Compleated Successfully .
+            <div class="m-20 tcenter" style="height:234px">
+                Your Account is Linked Successfully .
+            </div>
+        </div>
+    </ng-template>
+</section>

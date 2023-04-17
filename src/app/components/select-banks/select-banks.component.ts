@@ -1,5 +1,7 @@
 import { Bank } from './../../models/bank.model';
 import { Component, OnInit } from '@angular/core';
+import {StorageService} from './../../services/storage.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-select-banks',
   templateUrl: './select-banks.component.html',
@@ -12,6 +14,8 @@ export class SelectBanksComponent implements OnInit {
   errorMsg: boolean = false;
   selectedBanks: any = [];
   banklogos: string[] = ['andhra', 'apb', 'apna', 'bob', 'hdfc'];
+  constructor(private storageService:StorageService,
+    private router: Router) {}
 
   ngOnInit() {
     this.banks = this.getJsonBanks().map((jsonObj: any) => {
@@ -86,6 +90,10 @@ export class SelectBanksComponent implements OnInit {
     this.selectedBanks = this.selectedBanks.filter((item: any) => item != val);
   }
 
+  proceed(){
+    this.storageService.setItemInLS('selectedBanks',this.selectedBanks)
+    this.router.navigate(["accounts"]);
+  }
 
   getJsonBanks() {
     return (
