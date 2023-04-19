@@ -52,9 +52,9 @@ export class SelectBanksComponent implements OnInit {
   getWidgetAssets(selectedBank: any) {
     let isLogo = this.banklogos.includes(selectedBank);
     if (isLogo)
-      return `/assets/images/banks/${selectedBank}.svg`;
+      return `/Link-Bank-Account/assets/images/banks/${selectedBank}.svg`;
     else
-      return `/assets/images/banks/default_bank.png`;
+      return `/Link-Bank-Account/assets/images/banks/default_bank.png`;
   }
 
   updateSelectedBanks(event: Event, val: any) {
